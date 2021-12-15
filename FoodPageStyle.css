@@ -21,6 +21,7 @@ section{
     justify-content: center;
     padding: 100px 0;
     background-color: rgb(26,26,27);
+    padding-bottom: 23px;
 }
 
 .container{
@@ -130,6 +131,28 @@ form ion-icon{
     padding: 20px;
     font-size: 3rem;
 }
+
+
+.pagination{
+    background-color: rgb(37,37,37);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+#forward{
+   width:76px;
+   height:36px;
+   font-size: 1.5rem;
+   margin-left:10px;
+}
+
+#back{
+    width:76px;
+    height:36px;
+    font-size: 1.5rem;
+ }
 
 
 @media (max-width: 768px) {
