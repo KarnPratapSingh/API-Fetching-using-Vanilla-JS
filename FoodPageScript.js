@@ -12,13 +12,14 @@ const APP_ID="9ca97f43";
 const APP_key="f90ef7cdf84609948af84a1664df9cbd"
 
 
+
 //Pagination:
 
 let start_page_value=0;
 let last_page_value=6;
 
 let searchQuery='';
-// every time we search we want to perform some action, so add an event listener:
+//every time we search we want to perform some action, so add an event listener:
 searchForm.addEventListener('submit',(e)=>{
     e.preventDefault(); //e is our event
     //now we the value that was entered:
@@ -34,13 +35,15 @@ searchForm.addEventListener('submit',(e)=>{
 async function fetchAPI(){
     // go the documentation and get the base url or path of the API:
     const baseURL=`https://api.edamam.com/search?q=${searchQuery}&app_id=${APP_ID}&app_key=${APP_key}&from=${start_page_value}&to=${last_page_value}`; // to=20 means that we want 20 values; by default it will fetch 10 items
-
+    
+    // const response=await fetch(baseURL);
     const response=await fetch(baseURL);
+
     //convert the response into JSON:
     const data= await response.json();
 
-    //generate some HTML for all this response:
-    generateHTML(data.hits);
+   // generate some HTML for all this response:
+   generateHTML(data.hits);
     document.getElementById('forward').addEventListener('click',()=>{
         start_page_value=last_page_value;
         last_page_value=last_page_value+6;
